@@ -47,20 +47,35 @@ const NavBar = () => {
                         </Button>
                         <Button
                             variant='outline-light'
+                            className='me-2'
+                            onClick={() => navigate()}
+                        >
+                            О нас
+                        </Button>
+                        <Button
+                            variant='outline-light'
                             onClick={() => logout()}
                         >
                             Выйти
                         </Button>
                     </Nav>
                     :
-                    <Nav className="ml-auto">
+                    <>
                         <Button
                             variant='outline-light'
-                            onClick={() => navigate(LOGIN_ROUTE)}
+                            onClick={() => navigate()}
                         >
-                            Авторизация
+                            О нас
                         </Button>
-                    </Nav>
+                        <Nav className="ml-auto">
+                            <Button
+                                variant='outline-light'
+                                onClick={() => navigate(LOGIN_ROUTE)}
+                            >
+                                Авторизация
+                            </Button>
+                        </Nav>
+                    </>
                 }
             </Container>
         </Navbar >

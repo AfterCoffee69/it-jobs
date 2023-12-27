@@ -10,40 +10,48 @@ function MainPage() {
     const [searchQuery, setSearchQuery] = useState("");
 
     return (
-        <Container >
-            <Row className="mt-2">
-                <Col>
-                    <Form.Control
-                        placeholder={"Поиск вакансии..."}
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                </Col>
-                <Col>
-                    <Button
-                        variant="outline-dark"
-                        onClick={() => navigate(`${VACANCIES_LIST_ROUTER}?name=${searchQuery}`)}
-                    >
-                        Найти
-                    </Button>
-                </Col>
-            </Row>
-            <Row className="mt-3">
-                <Col md={5} >
-                    <p>
-                        <span style={{ color: '#674175' }}>Добро пожаловать </span>на нашу главную страницу веб-приложения поиска вакансий для работы в IT!
-                        <br></br>
-                        <Button className="mt-2 mb-2" variant="outline-dark" onClick={() => navigate(VACANCIES_LIST_ROUTER)}>
-                            Список вакансий
+        <div style={{ backgroundColor: "#D5A9FF" }}>
+            <Container style={{ minHeight: "92.7vh" }}>
+                <Row style={{ textAlign: "center", paddingTop: '15%' }}>
+                    <h2>Добро пожаловать на IT-Jobs</h2>
+                </Row>
+                <Row style={{ textAlign: "center" }} className="mt-2">
+                    <h5>Веб приложение поиска кандидатов и вакансий для работы в IT</h5>
+                </Row>
+                <Row style={{ textAlign: "center" }} className="mt-4">
+                    <Col md={4} style={{ marginLeft: "30%" }}>
+                        <div>
+                            <Form.Control
+                                placeholder={"Поиск вакансии..."}
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                        </div>
+                    </Col>
+                    <Col md={1}>
+                        <Button
+                            style={{ backgroundColor: "#674175", borderColor: "#674175" }}
+                            onClick={() => navigate(`${VACANCIES_LIST_ROUTER}?name=${searchQuery}`)}
+                        >
+                            Найти
                         </Button>
-                        <br></br>
-                        Здесь вы найдете широкий выбор вакансий, связанных с информационными технологиями, которые помогут вам найти идеальную работу в IT-индустрии. Независимо от вашего уровня опыта или специализации, мы стремимся предоставить вам самые актуальные и интересные предложения о работе.
-                        <br></br>
-                        Чтобы начать поиск вакансий, просто воспользуйтесь нашим удобным поисковым инструментом, где вы сможете указать свои предпочтения по местоположению, зарплатным ожиданиям, требованиям к навыкам и другим параметрам. Мы стремимся сделать процесс поиска работы максимально удобным и эффективным для вас.
-                    </p>
-                </Col>
-            </Row>
-        </Container >
+                    </Col>
+                </Row>
+                <Row style={{ textAlign: "center" }} className="mt-4">
+                    <Col>
+                        <Button
+                            variant="primary"
+                            style={{ backgroundColor: "#bb49e6", borderColor: "#bb49e6" }}
+                            onClick={() => navigate(`${VACANCIES_LIST_ROUTER}?name=${searchQuery}`)}
+                        >
+                            <h6>
+                                Список вакансий
+                            </h6>
+                        </Button>
+                    </Col>
+                </Row>
+            </Container>
+        </div >
     )
 }
 
