@@ -1,15 +1,21 @@
 import Main from "./pages/MainPage";
 import Auth from "./pages/AuthPage";
-import { MAIN_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, ADMIN_ROUTE, PROFIL_ROUTE, VACANCIES_LIST_ROUTER, VACANCY_PAGE_ROUTE } from "./utils/consts";
+import { MAIN_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, ADMIN_ROUTE, PROFIL_ROUTE, VACANCIES_LIST_ROUTER, VACANCY_PAGE_ROUTE, ABOUT_ROUTE, CREATE_VACANSY_ROUTER } from "./utils/consts";
 import AdminPage from "./pages/AdminPage";
 import Profile from "./pages/Profile";
 import VacansyList from "./pages/VacansyList";
 import VacancyPage from "./pages/VacancyPage";
+// import About from "./pages/AboutPage";
+import CreateVacansyPage from "./pages/CreateVacansyPage";
 
 export const authRoutes = [
     {
         path: ADMIN_ROUTE,
         Component: AdminPage
+    },
+    {
+        path: CREATE_VACANSY_ROUTER,
+        Component: CreateVacansyPage 
     },
 ];
 
@@ -18,6 +24,10 @@ export const publicRoutes = [
         path: MAIN_ROUTE,
         Component: Main
     },
+    // {
+    //     path: ABOUT_ROUTE,
+    //     Component: About 
+    // },
     {
         path: VACANCY_PAGE_ROUTE + '/:id',
         Component: VacancyPage 

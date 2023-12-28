@@ -6,6 +6,8 @@ import AddReqCategory from "../modals/AddReqCategory";
 import AddVacansyReq from "../modals/AddVacansyReq";
 import AddVacansy from "../modals/AddVacansy";
 import DelVacansyCategory from "../modals/DelVacansyCategory";
+import { useNavigate } from "react-router-dom";
+import { CREATE_VACANSY_ROUTER } from "../utils/consts";
 
 const AdminPage = () => {
     const [isLogin, setIsLogin] = useState(true)
@@ -14,6 +16,7 @@ const AdminPage = () => {
     const [vacansyCreateModel, setVacansyCreateModel] = useState(false)
     const [delVacancyModel, setDelVacancyModel] = useState(false)
     const [req, setReq] = useState(false)
+    const navigate = useNavigate()
 
     useEffect(() => {
         setIsLogin(false);
@@ -39,7 +42,7 @@ const AdminPage = () => {
                             <Button className="mt-2" variant="outline-dark"
                                 onClick={() => setVacansyReq(true)}>Добавить требования</Button>
                             <Button className="mt-2" variant="outline-dark"
-                                onClick={() => setVacansyCreateModel(true)}>Добавить вакансию</Button>
+                                onClick={() => navigate(CREATE_VACANSY_ROUTER)}>Добавить вакансию</Button>
                         </Col>
                     </Row>
                     <Col md={3}>
