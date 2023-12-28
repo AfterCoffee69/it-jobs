@@ -112,9 +112,10 @@ function VacansyList() {
                                         <Card.Text>{item.description}</Card.Text>
                                         <Card.Text>{item.vacanciseCategory.name}</Card.Text>
                                         <Card.Text>
-                                            Список технологий:
-                                            {item.requirements.map((req) => {
-                                                return req.name + " ";
+                                            Требования:
+                                            {item.requirements.map((req, index) => {
+                                                const isLast = index === item.requirements.length - 1;
+                                                return isLast ? ` ${req.name}.` : ` ${req.name},`;
                                             })}
                                         </Card.Text>
                                         <Card.Text>
