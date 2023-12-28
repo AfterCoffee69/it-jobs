@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import { ADMIN_ROUTE, LOGIN_ROUTE, MAIN_ROUTE, PROFIL_ROUTE } from '../utils/consts';
+import { ABOUT_ROUTE, ADMIN_ROUTE, LOGIN_ROUTE, MAIN_ROUTE, PROFIL_ROUTE } from '../utils/consts';
 
 const NavBar = () => {
     const navigate = useNavigate()
@@ -48,7 +48,7 @@ const NavBar = () => {
                         <Button
                             variant='outline-light'
                             className='me-2'
-                            onClick={() => navigate()}
+                            onClick={() => navigate(ABOUT_ROUTE)}
                         >
                             О нас
                         </Button>
@@ -63,7 +63,7 @@ const NavBar = () => {
                     <>
                         <Button
                             variant='outline-light'
-                            onClick={() => navigate()}
+                            onClick={() => navigate(ABOUT_ROUTE)}
                         >
                             О нас
                         </Button>
