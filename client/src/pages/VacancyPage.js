@@ -11,7 +11,7 @@ const VacancyPage = () => {
     const navigate = useNavigate();
     const [isLogin, setIsLogin] = useState(true);
     const [userInfo, setUserInfo] = useState(false);
-    const [userInfoId, setUserInfoId] = useState(0);
+    const [userInfoId, setUserInfoId] = useState(null);
     const [vacancyData, setVacancyData] = useState();
 
     useEffect(() => {
@@ -63,7 +63,7 @@ const VacancyPage = () => {
                     </Row>
                     <Row>
                         <Col>
-                            {parseInt(localStorage.getItem('userId')) !== parseInt(vacancyData.user.id) &&
+                            {localStorage.getItem('userId') && parseInt(localStorage.getItem('userId')) !== parseInt(vacancyData.user.id) &&
                                 !vacancyData.Responses.some(res => res.user.id === parseInt(localStorage.getItem('userId'))) ?
                                 <Button
                                     variant="outline-dark"
@@ -111,7 +111,11 @@ const VacancyPage = () => {
                             }
                         </Col>
                     </Row>
-                    <UserInfoModal show={userInfo} hide={() => setUserInfo(false)} userId={userInfoId} />
+                    {userInfoId !== null ?
+                        <UserInfoModal show={userInfo} hide={() => setUserInfo(false)} userId={userInfoId} />
+                        :
+                        <></>
+                    }
                 </Container>
             )}
         </Container>
